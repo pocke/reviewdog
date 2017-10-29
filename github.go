@@ -151,7 +151,7 @@ func (g *GitHubPullRequest) setPostedComment(ctx context.Context) error {
 			continue
 		}
 		path := *c.Path
-		pos := *c.Position
+		pos := *c.OriginalPosition
 		body := *c.Body
 		if _, ok := g.postedcs[path]; !ok {
 			g.postedcs[path] = make(map[int][]string)
